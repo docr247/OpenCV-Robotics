@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Topic of Interest</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <nav aria-label="Table of Contents">
+      <ul>
+        <li><a href="#aims">Aims</a></li>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#data-representation">Data Representation</a></li>
+        <li><a href="#converting">Converting</a></li>
+        <li><a href="#fixedpoint">Fixed Point Fractions</a></li>
+        <li><a href="#byte-ordering">Byte Ordering</a></li>
+      </ul>
+    </nav>
+    <header>
+      <h1>My Topic of Interest</h1>
+    </header>
+    <main>
+      <article>
+        <section id="interest" aria-labelledby="interest-heading">
+          <h2 id="interest-heading"></h2>
+        <body>
+        I have interest in a wide range of topics. These include Engineering, 
+        Mathematics, Technology and Software. Of all, my passion lies in 
+        <strong>Embedded Systems Development</strong>. I have always found it fun and exciting 
+        to develop systems that integrate both hardware and software together.
+        </body>
+        <figure>
+        <img src="es.jpg" alt="Embedded Systems Design.">
+        <figcaption>Figure 1: Embedded Systems Design</figcaption>
+        </figure>
+        </section >
+
+        <section id="key-points" aria-labelledby="key-points">
+            <h2 id="key-points-heading">Key Points about the topics </h2>
+            <ul>
+                <li>1. Computer Architecture</li>
+                <li>2. Hardware/Software Co-Design</li>
+                <li>3. HDL Design</li>
+                <li>4. Real-Time Operating Systems</li>
+            </ul>
+
+            <article id="rep-video" aria-labelledby="rep-video">
+            <h2 id="rep-video-heading">Representative Video</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/LN_Yc-WjGFk?si=7q14iFQdn0L-VEF5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+         
+            <section id="resources" aria-labelledby="resource">
+            <h2 id="resources-heading">Further Resources</h2>
+        
+            <div class="container">
+            <div class="box">
+              <h3 id="resource1">Resource 1</h3>
+              <p>More about Embedded Systems</p>
+            </div>
+
+            <div class = "box">
+              <h3 id="resource2">Resource 2</h3>
+              <p>More about RTOS</p>
+            </div>
+
+            <div class="box">
+              <h3 id="resource3">Resource 3</h3>
+              <p>More about VLSI</p>
+            </div>
+            </div>
+
+
+        </section>  
+    </article>
+    </main>
+    <footer>
+      <button id="subscribe-btn"> Subscribe to Newsletter</button>
+    </footer>
+    <div id="subscribe-modal" class="modal" aria-hidden="true" role = "dialog" aria-labelledby="modal-title">
+      <div class = "modal-content">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <h2 id="modal-title">Subscribe to our Newsletter</h2>
+      <p>Enter your email address to stay updated.</p>
+      <form id="subscribe-form">
+        <label for="subscriber-email">Email:</label>
+        <input type="email" id="subscriber-email" name="email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      </div>
+    </div>
+      <script>
+    const subscribeBtn = document.getElementById('subscribe-btn');
+    const modal = document.getElementById('subscribe-modal');
+    const closeModalBtn = document.querySelector('.close-modal');
+    const subscribeForm = document.getElementById('subscribe-form');
+
+    function openModal() {
+      modal.classList.add('show');
+      document.body.classList.add('modal-open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+      modal.classList.remove('show');
+      document.body.classList.remove('modal-open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    // Open when footer button is clicked
+    subscribeBtn.addEventListener('click', openModal);
+
+    // Close when X is clicked
+    closeModalBtn.addEventListener('click', closeModal);
+
+    // Close if user clicks outside the popup (on the dark area)
+    modal.addEventListener('click', function (event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // Handle form submit
+    subscribeForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // stop actual form submission for now
+      alert('Thank you for subscribing!');
+      subscribeForm.reset();
+      closeModal();
+    });
+  </script>
+
+  </body>
+</html>

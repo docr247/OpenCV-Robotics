@@ -1,0 +1,111 @@
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
+nav ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.container {
+  display: flex;
+  gap: 20px;
+  justify-content: left;
+  margin-top: 20px;
+}
+.box {
+  border: 2px solid #007bff;
+  padding: 20px;
+  width: 200px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px (rgba(0, 0, 0, 0.1));
+}
+
+#subscribe-btn {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#subscribe-btn:hover {
+  background-color: #004d99;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal.show {
+  display: flex;
+}
+.modal-content {
+  background: #ffffff;
+  padding: 20px 24px;
+  max-width: 400px;
+  width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+/* Close (X) button */
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  float: right;
+  cursor: pointer;
+}
+
+/* Email input styling */
+#subscribe-form {
+  margin-top: 10px;
+}
+
+#subscribe-form label {
+  display: block;
+  margin-bottom: 6px;
+}
+#subscribe-form label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+#subscribe-form input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+/* Subscribe button inside modal */
+#subscribe-form button[type="submit"] {
+  padding: 8px 16px;
+  border: none;
+  background-color: #0066cc;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#subscribe-form button[type="submit"]:hover {
+  background-color: #004d99;
+}
+body.modal-open {
+  overflow: hidden;
+}
